@@ -3,10 +3,8 @@ import "../styles/home.scss"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-
+import { motion } from "motion/react"
 import { Autoplay, Pagination } from 'swiper/modules';
-
 
 const Home = () => {
 
@@ -72,7 +70,80 @@ const Home = () => {
 
                 </div>
             </section>
-            <section className='page2' > </section>
+            <section className='page2'>
+                <div className="container">
+                    <motion.div
+                        className="box1">
+                        <motion.div
+                            initial={{
+                                opacity: 0,
+                                x: -100,
+                            }}
+                            transition={{
+                                duration: 1
+                            }}
+                            whileInView={{
+                                x: 0,
+                                opacity: 1
+                            }}
+                            className="layer-1">
+                            <div className="wrapper"></div>
+                            <div className="image">
+                                <img src="https://cdn.skoda-auto.com/images/sites/encom-v2/11d12fef-0794-449b-8b30-7ccfd3d01e2b/7df8d236ba417fe74cadcdc34db94666/HometilesModule/6541a58f91ef0aa2af3aae92a9415479/529fee9127cf46c11d03395194248848a902e6628a1b02e5f7e3f4628916b8c1/Default_bp576_1.webp" alt="" />
+                            </div>
+
+                            <div className="info">
+                                <h1>Skoda App</h1>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{
+                                opacity: 0,
+                                x: 100,
+                            }}
+                            transition={{
+                                duration: 1
+                            }}
+                            whileInView={{
+                                x: 0,
+                                opacity: 1
+                            }}
+                            className="layer-2"
+                        >
+                            <div className="wrapper"></div>
+                            <div className="image">
+                                <img src="https://cdn.skoda-auto.com/images/sites/encom-v2/6a629f91-036e-46c8-922e-adf200addf01/ee1ecfae4d6bff113f82f0da6d215190/HometilesModule/61fa58ec33c48623e437f7df4ab92b45/529fee9127cf46c11d03395194248848a902e6628a1b02e5f7e3f4628916b8c1/Default_bp576_1.webp" alt="" />
+                            </div>
+                            <div className="info">
+                                <h1>e-Mobility</h1>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                    <div className="box2">
+                        <div className="layer-1">
+                            <div className="wrapper"></div>
+                            <div className="image">
+                                <img src="https://cdn.skoda-auto.com/images/sites/encom-v2/6a629f91-036e-46c8-922e-adf200addf01/ee1ecfae4d6bff113f82f0da6d215190/HometilesModule/61fa58ec33c48623e437f7df4ab92b45/529fee9127cf46c11d03395194248848a902e6628a1b02e5f7e3f4628916b8c1/Default_bp576_1.webp" alt="" />
+                            </div>
+
+                            <div className="info">
+                                <h1>Skoda App</h1>
+                            </div>
+                        </div>
+
+                        <div className="layer-2">
+                            <div className="wrapper"></div>
+                            <div className="image">
+                                <img src="https://cdn.skoda-auto.com/images/sites/encom-v2/11d12fef-0794-449b-8b30-7ccfd3d01e2b/7df8d236ba417fe74cadcdc34db94666/HometilesModule/6541a58f91ef0aa2af3aae92a9415479/529fee9127cf46c11d03395194248848a902e6628a1b02e5f7e3f4628916b8c1/Default_bp576_1.webp" alt="" />
+                            </div>
+                            <div className="info">
+                                <h1>e-Mobility</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     )
 }

@@ -26,6 +26,7 @@
 .Navbar .mobile-view {
   padding: 4rem 2rem 2rem 2rem;
   font-size: 3rem;
+  z-index: 99;
   right: 0;
 }
 .Navbar .mobile-view .routes {

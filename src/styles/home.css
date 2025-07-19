@@ -9,9 +9,9 @@
 }
 .Home .page1 .container {
   height: 30rem;
+  width: 100%;
 }
 .Home .page1 .container .box {
-  width: 100%;
   height: 100%;
   position: relative;
 }
@@ -72,6 +72,143 @@
   transform: none !important;
 }
 .Home .page2 {
+  margin-top: 2rem;
+  width: 100vw;
+  height: 100%;
+  padding: 1rem;
+}
+.Home .page2 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.Home .page2 .container .box1 {
+  height: clamp(10rem, 40vw, 20rem);
+  display: flex;
+  gap: 0.5rem;
+}
+.Home .page2 .container .box1 .layer-1 {
+  position: relative;
+  width: 30%;
+  flex-shrink: 0;
+}
+.Home .page2 .container .box1 .layer-1 .image {
   width: 100%;
   height: 100%;
+}
+.Home .page2 .container .box1 .layer-1 .image img {
+  width: 100%;
+  height: 100%;
+}
+.Home .page2 .container .box1 .layer-1 .wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.Home .page2 .container .box1 .layer-1 .info {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+.Home .page2 .container .box1 .layer-1 .info h1 {
+  font-size: 2rem;
+  color: white;
+}
+.Home .page2 .container .box1 .layer-2 {
+  flex: 1;
+  flex-shrink: 0;
+  position: relative;
+}
+.Home .page2 .container .box1 .layer-2 .image {
+  width: 100%;
+  height: 100%;
+}
+.Home .page2 .container .box1 .layer-2 .image img {
+  width: 100%;
+  height: 100%;
+}
+.Home .page2 .container .box1 .layer-2 .wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.Home .page2 .container .box1 .layer-2 .info {
+  position: absolute;
+  bottom: 1rem;
+  left: 3rem;
+}
+.Home .page2 .container .box1 .layer-2 .info h1 {
+  font-size: 2rem;
+  color: white;
+}
+.Home .page2 .container .box2 {
+  height: clamp(10rem, 40vw, 20rem);
+  display: flex;
+  gap: 0.5rem;
+}
+.Home .page2 .container .box2 .layer-1 {
+  position: relative;
+  width: 70%;
+  flex-shrink: 0;
+}
+.Home .page2 .container .box2 .layer-1 .image {
+  width: 100%;
+  height: 100%;
+}
+.Home .page2 .container .box2 .layer-1 .image img {
+  width: 100%;
+  height: 100%;
+}
+.Home .page2 .container .box2 .layer-1 .wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.Home .page2 .container .box2 .layer-1 .info {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+.Home .page2 .container .box2 .layer-1 .info h1 {
+  font-size: 2rem;
+  color: white;
+}
+.Home .page2 .container .box2 .layer-2 {
+  flex: 1;
+  flex-shrink: 0;
+  position: relative;
+}
+.Home .page2 .container .box2 .layer-2 .image {
+  width: 100%;
+  height: 100%;
+}
+.Home .page2 .container .box2 .layer-2 .image img {
+  width: 100%;
+  height: 100%;
+}
+.Home .page2 .container .box2 .layer-2 .wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.Home .page2 .container .box2 .layer-2 .info {
+  position: absolute;
+  bottom: 1rem;
+  left: 3rem;
+}
+.Home .page2 .container .box2 .layer-2 .info h1 {
+  font-size: 2rem;
+  color: white;
 }/*# sourceMappingURL=home.css.map */

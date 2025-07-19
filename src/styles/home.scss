@@ -4,11 +4,13 @@
     font-family: "Rubik";
 
     .page1 {
-        height: fit-content;
+       height: fit-content;
+
         .container {
             height: 30rem;
+            width: 100%;
+
             .box {
-                width: 100%;
                 height: 100%;
                 position: relative;
 
@@ -57,7 +59,7 @@
     // Swiper pagination styles
     .swiper-pagination {
         bottom: 20px !important;
-        right: 0  !important;
+        right: 0 !important;
         // transform: translateX(-50%) !important;
         width: auto !important;
         display: flex !important;
@@ -82,9 +84,173 @@
     }
 
 
-    .page2{
-        width: 100%;
+    .page2 {
+        margin-top: 2rem;
+        width: 100vw;
         height: 100%;
+        padding: 1rem;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            .box1 {
+                height: clamp(10rem, 40vw, 20rem);
+                display: flex;
+                gap: .5rem;
+
+                .layer-1 {
+                    position: relative;
+                    width: 30%;
+                    flex-shrink: 0;
+
+                    .image {
+                        width: 100%;
+                        height: 100%;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .wrapper {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-color: rgba(0, 0, 0, 0.250);
+                    }
+
+                    .info {
+                        position: absolute;
+                        bottom: 1rem;
+                        left: 1rem;
+
+                        h1 {
+                            font-size: 2rem;
+                            color: white;
+                        }
+                    }
+                }
+
+                .layer-2 {
+                    flex: 1;
+                    flex-shrink: 0;
+                    position: relative;
+
+                    .image {
+                        width: 100%;
+                        height: 100%;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .wrapper {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-color: rgba(0, 0, 0, 0.250);
+                    }
+
+                    .info {
+                        position: absolute;
+                        bottom: 1rem;
+                        left: 3rem;
+
+                        h1 {
+                            font-size: 2rem;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .box2 {
+                height: clamp(10rem, 40vw, 20rem);
+                display: flex;
+                gap: .5rem;
+
+                .layer-1 {
+                    position: relative;
+                    width: 70%;
+                    flex-shrink: 0;
+
+                    .image {
+                        width: 100%;
+                        height: 100%;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .wrapper {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-color: rgba(0, 0, 0, 0.250);
+                    }
+
+                    .info {
+                        position: absolute;
+                        bottom: 1rem;
+                        left: 1rem;
+
+                        h1 {
+                            font-size: 2rem;
+                            color: white;
+                        }
+                    }
+                }
+
+                .layer-2 {
+                    flex: 1;
+                    flex-shrink: 0;
+                    position: relative;
+
+                    .image {
+                        width: 100%;
+                        height: 100%;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .wrapper {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-color: rgba(0, 0, 0, 0.250);
+                    }
+
+                    .info {
+                        position: absolute;
+                        bottom: 1rem;
+                        left: 3rem;
+
+                        h1 {
+                            font-size: 2rem;
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }
