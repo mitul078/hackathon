@@ -1,9 +1,78 @@
 import React from 'react'
+import "../styles/home.scss"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+import { Autoplay, Pagination } from 'swiper/modules';
+
 
 const Home = () => {
+
+    const slideData = [
+        {
+            imgSrc: "https://cdn.skoda-auto.com/images/sites/encom-v2/19f7263a-fba9-4522-afa4-b63816fd0d2d/37213c4c07a980b7691e5cfd1a1b4fc5/HeroBannerModule/d5873a76116765a49a9393a5cabdf63b/6c15c19c9087422c4b3593b63bcd9cadee61d995aa9aa406ecd1beab812bc116/Header_bp1200_1.webp",
+            h1: "The new Škoda Enyaq",
+            p: "Let's explore the latest addition to our electric portfolio, offering a range of over 580 kilometres"
+        },
+        {
+            imgSrc: "https://cdn.skoda-auto.com/images/sites/encom-v2/5091778b-9a22-4891-908f-b5c4d6869dea/fef0a1135b56101b4e1a5efc76456ffe/HeroBannerModule/d5873a76116765a49a9393a5cabdf63b/6c15c19c9087422c4b3593b63bcd9cadee61d995aa9aa406ecd1beab812bc116/Header_bp992_1.webp",
+            h1: "Škoda Elroq",
+            p: "Be more Elroq."
+        },
+        {
+            imgSrc: "https://cdn.skoda-auto.com/images/sites/encom-v2/edf3af7c-6e5d-428b-8ea1-49e9f531fcb2/3e344bc23d5b32c5f1124cfd2d55dbca/HeroBannerModule/d5873a76116765a49a9393a5cabdf63b/6c15c19c9087422c4b3593b63bcd9cadee61d995aa9aa406ecd1beab812bc116/Header_bp1200_1.webp",
+            h1: "Škoda Kylaq",
+            p: "Modern, bold & muscular SUV designed and engineered in India for India"
+        },
+        {
+            imgSrc: "https://cdn.skoda-auto.com/images/sites/encom-v2/997709fc-3c1e-4e8b-981e-869e0f878be5/7b0010344ef8d2005c3562b1cf7ca03c/HomeBannerModule/d5873a76116765a49a9393a5cabdf63b/dc2c0c21ba8b690c28a681ba5993d110ba5ae3bb066ed32032e9288a0edcd321/Header_bp992_1.webp",
+            h1: "Škoda Epiq",
+            p: "Small becomes epic"
+        }
+    ];
+
     return (
-        <div>
-            Home
+        <div className='Home'>
+            <section className='page1' >
+                <div className="container">
+                    <Swiper
+                        spaceBetween={0}
+                        centeredSlides={true}
+                        autoplay={{
+                            delay: 5000,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        modules={[Autoplay, Pagination]}
+                        className="mySwiper"
+                        style={{ width: '100%', height: '100%' }}
+                        loop={true}
+                        speed={800}
+                        effect="slide"
+                    >
+                        {slideData.map((slide, index) => (
+                            <SwiperSlide key={index}>
+                                <div className="box">
+                                    <div className="image">
+                                        <img src={slide.imgSrc} alt={slide.h1} />
+                                    </div>
+                                    <div className="info">
+                                        <h1>{slide.h1}</h1>
+                                        <p>{slide.p}</p>
+                                        <button>Explore</button>
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+
+                </div>
+            </section>
+            <section className='page2' > </section>
         </div>
     )
 }

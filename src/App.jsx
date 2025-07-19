@@ -6,10 +6,9 @@ import Loading from "./component/Loading"
 const App = () => {
   return (
     <>
-      <Suspense fallback={<Loading/>}>
+      <Suspense fallback={<Loading />}>
         <Nav />
         <MainRoutes />
-
       </Suspense>
     </>
   )
