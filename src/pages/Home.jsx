@@ -5,8 +5,109 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { motion } from "motion/react"
 import { Autoplay, Pagination } from 'swiper/modules';
+import { useRef, useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
+    const homeRef = useRef(null);
+
+    useEffect(() => {
+        gsap.from(homeRef.current, {
+            y: 20,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            delay: 1.2,
+        });
+    }, []);
+
+
+    const textRefs = useRef([]);
+    const sectionRef = useRef(null);
+
+
+    useEffect(() => {
+
+        textRefs.current.forEach((textElement, index) => {
+            if (textElement) {
+
+                const text = textElement.textContent;
+                textElement.innerHTML = '';
+
+
+                [...text].forEach((char, i) => {
+                    const span = document.createElement('span');
+                    span.textContent = char === ' ' ? '\u00A0' : char;
+                    span.style.display = 'inline-block';
+                    span.style.opacity = '0';
+                    span.style.transform = 'translateY(50px) rotateX(-90deg)';
+                    span.classList.add('char');
+                    textElement.appendChild(span);
+                });
+
+
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: textElement,
+                        start: index < 2 ? "top 90%" : "top 95%",
+                        end: "bottom 20%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+
+
+                tl.to(textElement.querySelectorAll('.char'), {
+                    opacity: 1,
+                    y: 0,
+                    rotationX: 0,
+                    duration: 0.6,
+                    stagger: 0.05,
+                    ease: "back.out(1.7)",
+                    delay: index * 0.1
+                })
+                    .to(textElement.querySelectorAll('.char'), {
+                        textShadow: "0 0 20px rgba(255,255,255,0.5)",
+                        duration: 0.3,
+                        stagger: 0.02,
+                        yoyo: true,
+                        repeat: 1
+                    }, "-=0.2");
+
+
+                textElement.addEventListener('mouseenter', () => {
+                    gsap.to(textElement.querySelectorAll('.char'), {
+                        y: -5,
+                        color: '#4ecdc4',
+                        duration: 0.3,
+                        stagger: 0.02,
+                        ease: "power2.out"
+                    });
+                });
+
+                textElement.addEventListener('mouseleave', () => {
+                    gsap.to(textElement.querySelectorAll('.char'), {
+                        y: 0,
+                        color: '#9FE2Bf',
+                        duration: 0.3,
+                        stagger: 0.02,
+                        ease: "power2.out"
+                    });
+                });
+            }
+
+        });
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, []);
+
+    const addToRefs = (el) => {
+        if (el && !textRefs.current.includes(el)) {
+            textRefs.current.push(el);
+        }
+    };
 
     const slideData = [
         {
@@ -32,7 +133,7 @@ const Home = () => {
     ];
 
     return (
-        <div className='Home'>
+        <div ref={homeRef} className='Home'>
             <section className='page1' >
                 <div className="container">
                     <Swiper
@@ -70,22 +171,14 @@ const Home = () => {
 
                 </div>
             </section>
-            <section className='page2'>
+            <section ref={sectionRef} className='page2'>
                 <div className="container">
                     <motion.div
                         className="box1">
                         <motion.div
-                            initial={{
-                                opacity: 0,
-                                x: -100,
-                            }}
-                            transition={{
-                                duration: 1
-                            }}
-                            whileInView={{
-                                x: 0,
-                                opacity: 1
-                            }}
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 1 }}
                             className="layer-1">
                             <div className="wrapper"></div>
                             <div className="image">
@@ -93,22 +186,25 @@ const Home = () => {
                             </div>
 
                             <div className="info">
-                                <h1>Skoda App</h1>
+                                <h1
+                                    ref={addToRefs}
+                                    className="animated-title"
+                                    style={{
+                                        fontWeight: 'bold',
+                                        cursor: 'pointer',
+                                        userSelect: 'none',
+                                        perspective: '1000px'
+                                    }}
+                                >
+                                    Skoda App
+                                </h1>
                             </div>
                         </motion.div>
 
                         <motion.div
-                            initial={{
-                                opacity: 0,
-                                x: 100,
-                            }}
-                            transition={{
-                                duration: 1
-                            }}
-                            whileInView={{
-                                x: 0,
-                                opacity: 1
-                            }}
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 1 }}
                             className="layer-2"
                         >
                             <div className="wrapper"></div>
@@ -116,32 +212,128 @@ const Home = () => {
                                 <img src="https://cdn.skoda-auto.com/images/sites/encom-v2/6a629f91-036e-46c8-922e-adf200addf01/ee1ecfae4d6bff113f82f0da6d215190/HometilesModule/61fa58ec33c48623e437f7df4ab92b45/529fee9127cf46c11d03395194248848a902e6628a1b02e5f7e3f4628916b8c1/Default_bp576_1.webp" alt="" />
                             </div>
                             <div className="info">
-                                <h1>e-Mobility</h1>
+                                <h1
+                                    ref={addToRefs}
+                                    className="animated-title"
+                                    style={{
+                                        fontWeight: 'bold',
+                                        cursor: 'pointer',
+                                        userSelect: 'none',
+                                        perspective: '1000px'
+                                    }}
+                                >
+                                    e-Mobility
+                                </h1>
                             </div>
                         </motion.div>
                     </motion.div>
                     <div className="box2">
-                        <div className="layer-1">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 1 }}
+
+                            className="layer-1">
                             <div className="wrapper"></div>
                             <div className="image">
                                 <img src="https://cdn.skoda-auto.com/images/sites/encom-v2/6a629f91-036e-46c8-922e-adf200addf01/ee1ecfae4d6bff113f82f0da6d215190/HometilesModule/61fa58ec33c48623e437f7df4ab92b45/529fee9127cf46c11d03395194248848a902e6628a1b02e5f7e3f4628916b8c1/Default_bp576_1.webp" alt="" />
                             </div>
 
                             <div className="info">
-                                <h1>Skoda App</h1>
+                                <h1
+                                    ref={addToRefs}
+                                    className="animated-title"
+                                    style={{
+                                        fontWeight: 'bold',
+                                        cursor: 'pointer',
+                                        userSelect: 'none',
+                                        perspective: '1000px'
+                                    }}
+                                >
+                                    e-Mobility
+                                </h1>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className="layer-2">
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 1 }}
+                            className="layer-2">
                             <div className="wrapper"></div>
                             <div className="image">
                                 <img src="https://cdn.skoda-auto.com/images/sites/encom-v2/11d12fef-0794-449b-8b30-7ccfd3d01e2b/7df8d236ba417fe74cadcdc34db94666/HometilesModule/6541a58f91ef0aa2af3aae92a9415479/529fee9127cf46c11d03395194248848a902e6628a1b02e5f7e3f4628916b8c1/Default_bp576_1.webp" alt="" />
                             </div>
                             <div className="info">
-                                <h1>e-Mobility</h1>
+                                <h1
+                                    ref={addToRefs}
+                                    className="animated-title"
+                                    style={{
+                                        fontWeight: 'bold',
+                                        cursor: 'pointer',
+                                        userSelect: 'none',
+                                        perspective: '1000px'
+                                    }}
+                                >
+                                    Skoda App
+                                </h1>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
+                    <motion.div
+                        className="box1">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 1 }}
+                            className="layer-1">
+                            <div className="wrapper"></div>
+                            <div className="image">
+                                <img src="https://cdn.skoda-auto.com/images/sites/encom-v2/11d12fef-0794-449b-8b30-7ccfd3d01e2b/7df8d236ba417fe74cadcdc34db94666/HometilesModule/6541a58f91ef0aa2af3aae92a9415479/529fee9127cf46c11d03395194248848a902e6628a1b02e5f7e3f4628916b8c1/Default_bp576_1.webp" alt="" />
+                            </div>
+
+                            <div className="info">
+                                <h1
+                                    ref={addToRefs}
+                                    className="animated-title"
+                                    style={{
+                                        fontWeight: 'bold',
+                                        cursor: 'pointer',
+                                        userSelect: 'none',
+                                        perspective: '1000px'
+                                    }}
+                                >
+                                    Skoda App
+                                </h1>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 1 }}
+                            className="layer-2"
+                        >
+                            <div className="wrapper"></div>
+                            <div className="image">
+                                <img src="https://cdn.skoda-auto.com/images/sites/encom-v2/6a629f91-036e-46c8-922e-adf200addf01/ee1ecfae4d6bff113f82f0da6d215190/HometilesModule/61fa58ec33c48623e437f7df4ab92b45/529fee9127cf46c11d03395194248848a902e6628a1b02e5f7e3f4628916b8c1/Default_bp576_1.webp" alt="" />
+                            </div>
+                            <div className="info">
+                                <h1
+                                    ref={addToRefs}
+                                    className="animated-title"
+                                    style={{
+                                        fontWeight: 'bold',
+                                        cursor: 'pointer',
+                                        userSelect: 'none',
+                                        perspective: '1000px'
+                                    }}
+                                >
+                                    e-Mobility
+                                </h1>
+                            </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
             </section>
         </div>

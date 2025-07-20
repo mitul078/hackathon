@@ -8,7 +8,7 @@
   height: fit-content;
 }
 .Home .page1 .container {
-  height: 30rem;
+  height: calc(100vh - 60px);
   width: 100%;
 }
 .Home .page1 .container .box {
@@ -83,7 +83,7 @@
   gap: 2rem;
 }
 .Home .page2 .container .box1 {
-  height: clamp(10rem, 40vw, 20rem);
+  height: clamp(6rem, 20vw, 30rem);
   display: flex;
   gap: 0.5rem;
 }
@@ -91,6 +91,11 @@
   position: relative;
   width: 30%;
   flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .Home .page2 .container .box1 .layer-1 {
+    height: 7rem;
+  }
 }
 .Home .page2 .container .box1 .layer-1 .image {
   width: 100%;
@@ -113,14 +118,29 @@
   bottom: 1rem;
   left: 1rem;
 }
+@media (max-width: 768px) {
+  .Home .page2 .container .box1 .layer-1 .info {
+    left: 0.2rem;
+  }
+}
 .Home .page2 .container .box1 .layer-1 .info h1 {
   font-size: 2rem;
   color: white;
+}
+@media (max-width: 768px) {
+  .Home .page2 .container .box1 .layer-1 .info h1 {
+    font-size: 1rem;
+  }
 }
 .Home .page2 .container .box1 .layer-2 {
   flex: 1;
   flex-shrink: 0;
   position: relative;
+}
+@media (max-width: 768px) {
+  .Home .page2 .container .box1 .layer-2 {
+    height: 7rem;
+  }
 }
 .Home .page2 .container .box1 .layer-2 .image {
   width: 100%;
@@ -143,12 +163,22 @@
   bottom: 1rem;
   left: 3rem;
 }
+@media (max-width: 768px) {
+  .Home .page2 .container .box1 .layer-2 .info {
+    left: 1rem;
+  }
+}
 .Home .page2 .container .box1 .layer-2 .info h1 {
   font-size: 2rem;
   color: white;
 }
+@media (max-width: 768px) {
+  .Home .page2 .container .box1 .layer-2 .info h1 {
+    font-size: 1rem;
+  }
+}
 .Home .page2 .container .box2 {
-  height: clamp(10rem, 40vw, 20rem);
+  height: clamp(6rem, 20vw, 30rem);
   display: flex;
   gap: 0.5rem;
 }
@@ -156,6 +186,11 @@
   position: relative;
   width: 70%;
   flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .Home .page2 .container .box2 .layer-1 {
+    height: 7rem;
+  }
 }
 .Home .page2 .container .box2 .layer-1 .image {
   width: 100%;
@@ -182,10 +217,20 @@
   font-size: 2rem;
   color: white;
 }
+@media (max-width: 768px) {
+  .Home .page2 .container .box2 .layer-1 .info h1 {
+    font-size: 1rem;
+  }
+}
 .Home .page2 .container .box2 .layer-2 {
   flex: 1;
   flex-shrink: 0;
   position: relative;
+}
+@media (max-width: 768px) {
+  .Home .page2 .container .box2 .layer-2 {
+    height: 7rem;
+  }
 }
 .Home .page2 .container .box2 .layer-2 .image {
   width: 100%;
@@ -208,7 +253,17 @@
   bottom: 1rem;
   left: 3rem;
 }
+@media (max-width: 768px) {
+  .Home .page2 .container .box2 .layer-2 .info {
+    left: 0.2rem;
+  }
+}
 .Home .page2 .container .box2 .layer-2 .info h1 {
   font-size: 2rem;
   color: white;
+}
+@media (max-width: 768px) {
+  .Home .page2 .container .box2 .layer-2 .info h1 {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=home.css.map */
