@@ -1,0 +1,159 @@
+.Model {
+  width: 100%;
+  height: calc(100vh - 60px);
+  padding: 1rem;
+  overflow-y: scroll;
+}
+.Model::-webkit-scrollbar {
+  display: none;
+}
+.Model .page1 {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+}
+.Model .page1 .header p {
+  text-align: center;
+  opacity: 0.7;
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+}
+.Model .page1 .header h1 {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 700;
+  color: white;
+}
+.Model .page1 .header h3 {
+  text-align: center;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  color: white;
+  opacity: 0.8;
+}
+.Model .page1 .models {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Model .page1 .models .grid-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.Model .page1 .models .grid-1 .box {
+  width: 350px;
+  height: 150px;
+  border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+}
+.Model .page1 .models .grid-1 .box .image {
+  width: 100%;
+  height: 100%;
+}
+.Model .page1 .models .grid-1 .box .image img {
+  width: 100%;
+  height: 100%;
+}
+.Model .page1 .models .grid-1 .box .info {
+  position: absolute;
+  bottom: 1rem;
+  right: 0.5rem;
+}
+.Model .page1 .models .grid-1 .box .info button {
+  transform: translateY(60px);
+  font-size: 1.2rem;
+  padding: 0.2rem 1rem;
+  background-color: darkseagreen;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+.Model .page1 .models .grid-1 .box .info button:hover {
+  background-color: yellowgreen;
+}
+.Model .page1 .models .grid-1 .box:hover button {
+  transform: translateY(0);
+}
+.Model .page1 .models .grid-2 {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.Model .page1 .models .grid-2 .box {
+  width: 300px;
+  height: 130px;
+  background-color: white;
+  border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.Model .page1 .models .grid-2 .box .image {
+  width: 100%;
+  height: 100%;
+}
+.Model .page1 .models .grid-2 .box .image img {
+  width: 100%;
+  height: 100%;
+}
+.Model .page1 .models .grid-2 .box .info {
+  position: absolute;
+  bottom: 1rem;
+  right: 0.5rem;
+}
+.Model .page1 .models .grid-2 .box .info button {
+  transform: translateY(60px);
+  font-size: 1.2rem;
+  padding: 0.2rem 1rem;
+  background-color: darkseagreen;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+.Model .page1 .models .grid-2 .box .info button:hover {
+  background-color: yellowgreen;
+}
+.Model .page1 .models .grid-2 .box:hover button {
+  transform: translateY(0);
+}
+.Model .page1 .Load {
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: oldlace;
+  bottom: -2rem;
+  color: black;
+  transition: all 0.3s ease-in;
+}
+.Model .page1 .Load:active {
+  scale: 0.8;
+}
+.Model .page1 .Load:hover {
+  background-color: orange;
+}
+.Model .page2 {
+  width: 100%;
+  height: 100%;
+  background-color: lightseagreen;
+}/*# sourceMappingURL=model.css.map */

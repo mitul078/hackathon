@@ -1,0 +1,185 @@
+.Model {
+    width: 100%;
+    height: calc(100vh - 60px);
+    padding: 1rem;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .page1 {
+        width: 100%;
+        height: fit-content;
+        position: relative;
+        .header {
+            p {
+                text-align: center;
+                opacity: .7;
+                font-size: 1rem;
+                color: white;
+                font-weight: 500;
+            }
+
+            h1 {
+                font-size: 3rem;
+                text-align: center;
+                font-weight: 700;
+                color: white;
+            }
+
+            h3 {
+                text-align: center;
+                font-size: 1.3rem;
+                text-transform: capitalize;
+                margin-bottom: 2rem;
+                color: white;
+                opacity: .8;
+            }
+        }
+
+        .models {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .grid-1 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+
+                .box {
+                    width: 350px;
+                    height: 150px;
+                    border-radius: 2rem;
+                    position: relative;
+                    overflow: hidden;
+                    background-color: white;
+
+                    .image {
+                        width: 100%;
+                        height: 100%;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .info {
+                        position: absolute;
+                        bottom: 1rem;
+                        right: .5rem;
+
+                        button {
+                            transform: translateY(60px);
+                            font-size: 1.2rem;
+                            padding: .2rem 1rem;
+                            background-color: darkseagreen;
+                            color: white;
+                            font-weight: 600;
+                            cursor: pointer;
+                            border-radius: 1rem;
+                            transition: all .3s ease;
+
+                            &:hover {
+                                background-color: yellowgreen;
+                            }
+                        }
+                    }
+
+                    &:hover button {
+                        transform: translateY(0);
+                    }
+                }
+            }
+
+            .grid-2 {
+                margin-top: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-bottom: 2rem;
+
+                .box {
+                    width: 300px;
+                    height: 130px;
+                    background-color: white;
+                    border-radius: 2rem;
+                    position: relative;
+                    overflow: hidden;
+
+                    .image {
+                        width: 100%;
+                        height: 100%;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .info {
+                        position: absolute;
+                        bottom: 1rem;
+                        right: .5rem;
+
+                        button {
+                            transform: translateY(60px);
+                            font-size: 1.2rem;
+                            padding: .2rem 1rem;
+                            background-color: darkseagreen;
+                            color: white;
+                            font-weight: 600;
+                            cursor: pointer;
+                            border-radius: 1rem;
+                            transition: all .3s ease;
+
+                            &:hover {
+                                background-color: yellowgreen;
+                            }
+                        }
+                    }
+
+                    &:hover button {
+                        transform: translateY(0);
+                    }
+                }
+            }
+        }
+
+        .Load {
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-radius: 1rem;
+            padding: .5rem 2rem;
+            cursor: pointer;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: oldlace;
+            
+            bottom: -2rem;
+            color: black;
+            transition: all .3s ease-in;
+
+            &:active {
+                scale: .8;
+            }
+            &:hover{
+                background-color: orange;
+            }
+        }
+
+    }
+
+    .page2 {
+        width: 100%;
+        height: 100%;
+        background-color: lightseagreen;
+    }
+}
