@@ -3,6 +3,13 @@
   height: calc(100vh - 60px);
   padding: 1rem;
   overflow-y: scroll;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+.Model.fade {
+  opacity: 1;
+  transform: translateY(0);
 }
 .Model::-webkit-scrollbar {
   display: none;
@@ -12,21 +19,27 @@
   height: -moz-fit-content;
   height: fit-content;
   position: relative;
+  margin-bottom: 2rem;
 }
-.Model .page1 .header p {
+.Model .page1 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Model .page1 .container .header p {
   text-align: center;
   opacity: 0.7;
   font-size: 1rem;
   color: white;
   font-weight: 500;
 }
-.Model .page1 .header h1 {
+.Model .page1 .container .header h1 {
   font-size: 3rem;
   text-align: center;
   font-weight: 700;
   color: white;
 }
-.Model .page1 .header h3 {
+.Model .page1 .container .header h3 {
   text-align: center;
   font-size: 1.3rem;
   text-transform: capitalize;
@@ -34,20 +47,20 @@
   color: white;
   opacity: 0.8;
 }
-.Model .page1 .models {
+.Model .page1 .container .models {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.Model .page1 .models .grid-1 {
+.Model .page1 .container .models .grid-1 {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
 }
-.Model .page1 .models .grid-1 .box {
+.Model .page1 .container .models .grid-1 .box {
   width: 350px;
   height: 150px;
   border-radius: 2rem;
@@ -55,46 +68,66 @@
   overflow: hidden;
   background-color: white;
 }
-.Model .page1 .models .grid-1 .box .image {
+@media (max-width: 785px) {
+  .Model .page1 .container .models .grid-1 .box {
+    width: 100%;
+  }
+}
+.Model .page1 .container .models .grid-1 .box .image {
   width: 100%;
   height: 100%;
 }
-.Model .page1 .models .grid-1 .box .image img {
+.Model .page1 .container .models .grid-1 .box .image img {
   width: 100%;
   height: 100%;
 }
-.Model .page1 .models .grid-1 .box .info {
+.Model .page1 .container .models .grid-1 .box .info {
   position: absolute;
   bottom: 1rem;
   right: 0.5rem;
 }
-.Model .page1 .models .grid-1 .box .info button {
+.Model .page1 .container .models .grid-1 .box .info button {
   transform: translateY(60px);
   font-size: 1.2rem;
   padding: 0.2rem 1rem;
-  background-color: darkseagreen;
+  background-color: black;
   color: white;
   font-weight: 600;
   cursor: pointer;
   border-radius: 1rem;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
-.Model .page1 .models .grid-1 .box .info button:hover {
-  background-color: yellowgreen;
+@media (max-width: 785px) {
+  .Model .page1 .container .models .grid-1 .box .info button {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
 }
-.Model .page1 .models .grid-1 .box:hover button {
+.Model .page1 .container .models .grid-1 .box .info button:hover {
+  background-color: white;
+  color: black;
+}
+.Model .page1 .container .models .grid-1 .box:hover button {
   transform: translateY(0);
 }
-.Model .page1 .models .grid-2 {
+.Model .page1 .container .models .grid-2 {
   margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
-.Model .page1 .models .grid-2 .box {
+@media (max-width: 785px) {
+  .Model .page1 .container .models .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 150px 150px;
+  }
+}
+.Model .page1 .container .models .grid-2 .box {
   width: 300px;
   height: 130px;
   background-color: white;
@@ -102,58 +135,142 @@
   position: relative;
   overflow: hidden;
 }
-.Model .page1 .models .grid-2 .box .image {
+@media (max-width: 785px) {
+  .Model .page1 .container .models .grid-2 .box {
+    width: 100%;
+    height: 100%;
+  }
+}
+.Model .page1 .container .models .grid-2 .box .image {
   width: 100%;
   height: 100%;
 }
-.Model .page1 .models .grid-2 .box .image img {
+.Model .page1 .container .models .grid-2 .box .image img {
   width: 100%;
   height: 100%;
 }
-.Model .page1 .models .grid-2 .box .info {
+.Model .page1 .container .models .grid-2 .box .info {
   position: absolute;
   bottom: 1rem;
   right: 0.5rem;
 }
-.Model .page1 .models .grid-2 .box .info button {
+.Model .page1 .container .models .grid-2 .box .info button {
   transform: translateY(60px);
   font-size: 1.2rem;
   padding: 0.2rem 1rem;
-  background-color: darkseagreen;
+  background-color: black;
   color: white;
   font-weight: 600;
   cursor: pointer;
   border-radius: 1rem;
   transition: all 0.3s ease;
 }
-.Model .page1 .models .grid-2 .box .info button:hover {
-  background-color: yellowgreen;
+.Model .page1 .container .models .grid-2 .box .info button:hover {
+  background-color: white;
+  color: black;
 }
-.Model .page1 .models .grid-2 .box:hover button {
+.Model .page1 .container .models .grid-2 .box:hover button {
   transform: translateY(0);
 }
-.Model .page1 .Load {
+.Model .page1 .container .Load {
   font-size: 1.5rem;
   font-weight: 700;
   border-radius: 1rem;
   padding: 0.5rem 2rem;
   cursor: pointer;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: oldlace;
-  bottom: -2rem;
+  background-color: whitesmoke;
   color: black;
-  transition: all 0.3s ease-in;
+  transition: all 0.3s ease;
 }
-.Model .page1 .Load:active {
+.Model .page1 .container .Load:active {
   scale: 0.8;
 }
-.Model .page1 .Load:hover {
-  background-color: orange;
+.Model .page1 .container .Load:hover {
+  color: white;
+  background-color: rgba(202, 202, 202, 0.847);
 }
 .Model .page2 {
+  margin-top: 2rem;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.Model .page2 .container {
   width: 100%;
   height: 100%;
-  background-color: lightseagreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.Model .page2 .container .landing {
+  width: 100%;
+  height: 30rem;
+  position: relative;
+}
+.Model .page2 .container .landing .image {
+  width: 100%;
+  height: 100%;
+}
+.Model .page2 .container .landing .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Model .page2 .container .landing .info {
+  position: absolute;
+  bottom: 3rem;
+  left: 2rem;
+}
+.Model .page2 .container .landing .info h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.Model .page2 .container .car-info {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: white;
+  color: black;
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Model .page2 .container .car-info p {
+  text-align: center;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  width: 65%;
+}
+.Model .page2 .container .car-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+.Model .page2 .container .car-image .scroll-inner {
+  display: flex;
+  width: 900%;
+  height: 100%;
+}
+.Model .page2 .container .car-image .scroll-inner .panel {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  flex-shrink: 0;
+}
+.Model .page2 .container .car-image .scroll-inner .panel img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Model .page3 {
+  width: 100%;
+  height: 100%;
+  background-color: red;
 }/*# sourceMappingURL=model.css.map */
