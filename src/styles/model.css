@@ -254,6 +254,7 @@
 }
 .Model .page2 .container .car-image .scroll-inner {
   display: flex;
+  will-change: transform;
   width: 900%;
   height: 100%;
 }
